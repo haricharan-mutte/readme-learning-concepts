@@ -96,6 +96,41 @@ public enum EnumSingleton {
   public void doWork() {}
 }
 ```
+
+#### F)  Implement using AtomicReference
+```
+public class AtomicSingleton {
+// Atomic reference to hold the Singleton instance
+private static final AtomicReference<AtomicSingleton> INSTANCE = new AtomicReference<>();
+
+    // Private constructor to prevent instantiation
+    private AtomicSingleton() {
+        System.out.println("Singleton created");
+    }
+
+    // Public method to get the instance
+    public static AtomicSingleton getInstance() {
+        AtomicSingleton current = INSTANCE.get();
+        if (current == null) {
+            AtomicSingleton newInstance = new AtomicSingleton();
+            // Atomically set the instance if it's still null
+            if (INSTANCE.compareAndSet(null, newInstance)) {
+                return newInstance;
+            } else {
+                // Another thread beat us to it, use the one it created
+                return INSTANCE.get();
+            }
+        }
+        return current;
+    }
+
+    // Just a sample method
+    public void sayHello() {
+        System.out.println("Hello from Singleton!");
+    }
+}
+```
+
 **Real usage**: `java.lang.Runtime`, Spring beans (default singleton scope), logging singletons.  
 **Use cases**: configuration registry, shared object mapper, centralized metrics client.
 
