@@ -129,8 +129,12 @@ Children’s education funds
 Index funds
 ETFs
 Gold funds
-🧠 2. What is “Subcategory”?
 
+```
+
+## 🧠 2. What is “Subcategory”?
+
+```
 👉 Subcategory = more specific type within category
 
 📊 Equity Subcategories (Most important for you)
