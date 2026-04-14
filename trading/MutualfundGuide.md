@@ -10,7 +10,7 @@ Stocks (Equity) - Bonds (Debt) - Other assets
 
 ## 💸 2. What is SIP (Systematic Investment Plan)?
 
-SIP is a way to invest a fixed amount every month.
+SIP is a way to invest a fixed amount every month into mutul fund. 
 
 ### How it works:
 
